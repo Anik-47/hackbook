@@ -7,3 +7,4 @@
 * [Nmap](tools/nmap/README.md)
   * [👾 Host Discovery](tools/nmap/host-discovery.md)
   * [🤖 Port Scan](tools/nmap/port-scan.md)
+  * [👹 Advanced Port Scan](tools/nmap/advanced-port-scan.md)
