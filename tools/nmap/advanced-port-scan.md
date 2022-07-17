@@ -78,6 +78,70 @@ Launching a TCP window scan against a Linux system with no firewall will not pro
 
 However, as you would expect, if we repeat our TCP window scan against a server behind a firewall, we expect to get more satisfying results. Ports might show closed, but we know that these ports are not closed, we realize they responded differently, indicating that the firewall does not block them.
 
-\
- <a href="#advanced-scan-type" id="advanced-scan-type"></a>
------------------------------------------------------------
+## Spoofing And Decoys <a href="#advanced-scan-type" id="advanced-scan-type"></a>
+
+### Spoofing <a href="#advanced-scan-type" id="advanced-scan-type"></a>
+
+In some network setups, you will be able to scan a target system using a spoofed IP address and even a spoofed MAC address. Such a scan is only beneficial in a situation where you can guarantee to capture the response. If you try to scan a target from some random network using a spoofed IP address, chances are you won’t have any response routed to you, and the scan results could be unreliable.
+
+The following figure shows the attacker launching the command _<mark style="color:blue;">`nmap -S SPOOFED_IP MACHINE_IP`</mark>_. Consequently, Nmap will craft all the packets using the provided source IP address _<mark style="color:blue;">`SPOOFED_IP`</mark>_. The target machine will respond to the incoming packets sending the replies to the destination IP address _<mark style="color:blue;">`SPOOFED_IP`</mark>_. For this scan to work and give accurate results, the attacker needs to monitor the network traffic to analyze the replies.
+
+![](https://tryhackme-images.s3.amazonaws.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/45b982d501fd26deb2b381059b16f80c.png)
+
+In brief, scanning with a spoofed IP address is three steps:
+
+1. The attacker sends a packet with a spoofed source IP address to the target machine.
+2. The target machine replies to the spoofed IP address as the destination.
+3. The attacker captures the replies to figure out open ports.
+
+In general, you expect to specify the network interface using -e and to explicitly disable ping scan -Pn. Therefore, instead of using_<mark style="color:blue;">`nmap -S SPOOFED_IP MACHINE_IP`</mark>_ you will need to issue _<mark style="color:blue;">`nmap -e NET_INTERFACE -Pn -S SPOOFED_IP MACHINE_IP`</mark>_ to tell Nmap explicitly which network interface to use and not to expect to receive a ping reply. It is worth repeating that this scan will be useless if the attacker system cannot monitor the network for responses.
+
+When you are on the same subnet as the target machine, you would be able to spoof your MAC address as well. You can specify the source MAC address using _<mark style="color:blue;">`--spoof-mac SPOOFED_MAC`</mark>_. This address spoofing is only possible if the attacker and the target machine are on the same Ethernet (802.3) network or same WiFi (802.11).
+
+### Decoy
+
+Spoofing only works in a minimal number of cases where certain conditions are met. Therefore, the attacker might resort to using decoys to make it more challenging to be pinpointed.&#x20;
+
+The concept is simple, make the scan appears to be coming from many IP addresses so that the attacker’s IP address would be lost among them.&#x20;
+
+As we see in the figure below, the scan of the target machine will appear to be coming from 3 different sources, and consequently, the replies will go to the decoys as well.
+
+![](https://tryhackme-images.s3.amazonaws.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/754fc455556a424ca83f512665beaf7d.png)
+
+You can launch a decoy scan by specifying a specific or random IP address after _<mark style="color:blue;">`-D`</mark>_. For example, _<mark style="color:blue;">`nmap -D 10.10.0.1,10.10.0.2,ME MACHINE_IP`</mark>_ will make the scan of _<mark style="color:blue;">`MACHINE_IP`</mark>_ appearing as coming from the IP addresses 10.10.0.1, 10.10.0.2, and then _`ME`_ , indicating that your IP address should appear in the third order. Another example command would be:
+
+_<mark style="color:blue;">`nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME MACHINE_IP`</mark>_
+
+where the third and fourth source IP addresses are assigned randomly, while the fifth source is going to be the attacker’s IP address. In other words, each time you execute the latter command, you would expect two new random IP addresses to be the third and fourth decoy sources.
+
+## Fragmented Packets
+
+### Firewall
+
+A firewall is a piece of software or hardware that permits packets to pass through or blocks them. It functions based on firewall rules, summarized as blocking all traffic with exceptions or allowing all traffic with exceptions. For instance, you might block all traffic to your server except those coming to your web server. A traditional firewall inspects, at least, the IP header and the transport layer header. A more sophisticated firewall would also try to examine the data carried by the transport layer.
+
+### IDS
+
+A firewall is a piece of software or hardware that permits packets to pass through or blocks them. It functions based on firewall rules, summarized as blocking all traffic with exceptions or allowing all traffic with exceptions. For instance, you might block all traffic to your server except those coming to your web server. A traditional firewall inspects, at least, the IP header and the transport layer header. A more sophisticated firewall would also try to examine the data carried by the transport layer.
+
+### Fragmentation of Packets
+
+Nmap provides the option _<mark style="color:blue;">`-f`</mark>_ to fragment packets. Once chosen, the IP data will be divided into 8 bytes or less. Adding another _<mark style="color:blue;">`-f`</mark>_ (_<mark style="color:blue;">`-f -f`</mark>_ or _<mark style="color:blue;">`-ff`</mark>_) will split the data into 16 byte-fragments instead of 8. You can change the default value by using the _<mark style="color:blue;">`--mtu`</mark>_; however, you should always choose a multiple of 8.
+
+if you prefer to increase the size of your packets to make them look innocuous, you can use the option
+
+_<mark style="color:blue;">`--data-length NUM`</mark>_, where num specifies the number of bytes you want to append to your packets.
+
+## Idle or Zombie Scan
+
+
+
+spoofing the source IP address can be a great approach to scanning stealthily. However, spoofing will only work in specific network setups. It requires you to be in a position where you can monitor the traffic. Considering these limitations, spoofing your IP address can have little use; however, we can give it an upgrade with the idle scan.
+
+The idle scan, or zombie scan, requires an idle system connected to the network that you can communicate with. Practically, Nmap will make each probe appear as if coming from the idle (zombie) host, then it will check for indicators whether the idle (zombie) host received any response to the spoofed probe. This is accomplished by checking the IP identification (IP ID) value in the IP header. You can run an idle scan using _<mark style="color:blue;">`nmap -sI ZOMBIE_IP MACHINE_IP`</mark>_, where _<mark style="color:blue;">`ZOMBIE_IP`</mark>_ is the IP address of the idle host (zombie).
+
+The idle (zombie) scan requires the following three steps to discover whether a port is open:
+
+1. Trigger the idle host to respond so that you can record the current IP ID on the idle host.
+2. Send a SYN packet to a TCP port on the target. The packet should be spoofed to appear as if it was coming from the idle host (zombie) IP address.
+3. Trigger the idle machine again to respond so that you can compare the new IP ID with the one received earlier.
