@@ -2,7 +2,8 @@
 
 * [Nick's Pentestbook](README.md)
 
-## Tools
+## 👽 Tools
 
 * [Nmap](tools/nmap/README.md)
-  * [Host Discovery](tools/nmap/host-discovery.md)
+  * [👾 Host Discovery](tools/nmap/host-discovery.md)
+  * [🤖 Port Scan](tools/nmap/port-scan.md)
