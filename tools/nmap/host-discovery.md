@@ -14,7 +14,7 @@
 | ------- | ----------------------------------------------- |
 | -n      | no DNS lookup                                   |
 | -R      | reverse-DNS lookup for all hosts (even offline) |
-| -sb     | Host Discovery only                             |
+| -sn     | Host Discovery only                             |
 
 {% hint style="info" %}
 Remember to add <mark style="color:blue;background-color:blue;">`-sn`</mark> if you are only interested in host discovery without port-scanning. Omitting <mark style="color:blue;">-sn</mark> will let Nmap default to port-scanning the live hosts.
