@@ -14,3 +14,8 @@
 
 * [shell](web/shell.md)
 * [Page 1](web/page-1.md)
+
+## WiFi
+
+* [Deauth](wifi/deauth.md)
+* [Man-in-the-middle](wifi/man-in-the-middle.md)
