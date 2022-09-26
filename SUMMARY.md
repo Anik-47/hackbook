@@ -13,7 +13,8 @@
 ## web
 
 * [shell](web/shell.md)
-* [Page 1](web/page-1.md)
+* [File-Upload](web/file-upload/README.md)
+  * [Bypass-File\_Upload](web/file-upload/bypass-file\_upload.md)
 
 ## WiFi
 
@@ -22,5 +23,5 @@
 
 ## Threat Modelling
 
-* [STRIDE](threat-modelling/stride.md)
 * [Intro](threat-modelling/intro.md)
+* [STRIDE](threat-modelling/stride.md)
