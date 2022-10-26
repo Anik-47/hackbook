@@ -1,4 +1,12 @@
+---
+description: >-
+  Through these process you can discover hosts on your current network. You can
+  then further scan them to find open ports and services.
+---
+
 # 👾 Host Discovery
+
+
 
 | Scan type              | Command                                    |
 | ---------------------- | ------------------------------------------ |
