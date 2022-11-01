@@ -18,6 +18,7 @@
   * [How to Find](web/sql-injection/how-to-find.md)
   * [cheat-sheet](web/sql-injection/cheat-sheet.md)
 * [shell](web/shell.md)
+* [Advanced Search](web/advanced-search.md)
 
 ## WiFi
 
