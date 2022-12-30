@@ -12,6 +12,7 @@
 
 ## web
 
+* [Headers](web/headers.md)
 * [File-Upload](web/file-upload/README.md)
   * [Bypass-File\_Upload](web/file-upload/bypass-file\_upload.md)
 * [SQL Injection](web/sql-injection/README.md)
