@@ -18,6 +18,8 @@
 * [SQL Injection](web/sql-injection/README.md)
   * [How to Find](web/sql-injection/how-to-find.md)
   * [cheat-sheet](web/sql-injection/cheat-sheet.md)
+* [JWT](web/jwt/README.md)
+  * [Page 1](web/jwt/page-1.md)
 * [shell](web/shell.md)
 * [Advanced Search](web/advanced-search.md)
 
