@@ -6,7 +6,7 @@ We will take [_`http://testphp.vulnweb.com`_](http://testphp.vulnweb.com) as a v
 
 Sign up with _<mark style="color:blue;">username: test</mark>_ & _<mark style="color:blue;">password: test</mark>_
 
-Try inserting a quote ( _" , '_ ) inside the parameter cat.
+Try inserting a quote or a double quote ( _' , "_ ) inside the parameter cat.
 
 <figure><img src="../../.gitbook/assets/sqli-1" alt=""><figcaption></figcaption></figure>
 
@@ -14,4 +14,8 @@ On inserting a quote inside the cat parameter we get an error, so it might be vu
 
 <figure><img src="../../.gitbook/assets/2.png" alt=""><figcaption></figcaption></figure>
 
-You need to test all the input fields on a website that could be connected to a database
+You should test all the input fields on a website that could be connected to a database
+
+{% hint style="info" %}
+There are types of SQL injection such as Blind SQL injection that require different techniques to detect.
+{% endhint %}
