@@ -12,6 +12,7 @@
 
 ## web
 
+* [XSS](web/xss.md)
 * [Headers](web/headers.md)
 * [File-Upload](web/file-upload/README.md)
   * [Bypass-File\_Upload](web/file-upload/bypass-file\_upload.md)
