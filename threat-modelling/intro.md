@@ -1,5 +1,19 @@
 # Intro
 
+## Key Terms
+
+**Vulnerability:**\
+It is a flaw, loophole, or error that can be exploited to violate security policies. For example, you found an application that is susceptible to buffer overflow exploit.\
+\
+**Threat:**\
+A threat is an event that can be natural or man-made which can impact an organisation negatively. It could be a natural calamity like an earthquake or a hacker.\
+\
+**Exploit:**\
+An exploit is a defined way to breach the security of an IT system through a vulnerability. For example, a piece of code that can be used to execute a certain attack  based on the vulnerability\
+\
+**Risk:**\
+It is the probability of an event or situation involving exposure to danger, for example, the likelihood of a vulnerability being exploited.
+
 ## Threat Modelling
 
 It's a security process where potential threats are identified, categorized, and analyzed.
@@ -12,14 +26,14 @@ There are two approaches to implementing threat modeling&#x20;
 
 ### Goals of Threat Modeling:
 
-1. To reduce the number of security-related  gaps in coding or Architecture
-2. To reduce the severity of remaining Vulnerability
+1. To reduce the number of security-related  gaps in coding or architecture
+2. To reduce the severity of the remaining vulnerability
 
 ### Identifying Threats
 
 1. Focused on Attackers: Identifying potential attackers and their goals.
-2. Focus on Assets: Identifying Threats to valuable assets.
-3. Focus on Software: Potential Threats against developed software.
+2. Focus on Assets: Identifying threats to valuable assets.
+3. Focus on Software: Potential threats against developed software.
 
 ## Threat Modeling Standard
 
@@ -30,9 +44,9 @@ There are two approaches to implementing threat modeling&#x20;
 Spoofing: In cyber-security spoofing is an attack when an attacker pretends to be 
 someone else.
 
-Tampering: Unauthorised modification, editing, manipulation of data.
+Tampering: Unauthorised modification, editing, or manipulation of data.
 
-Repudiation: Sending proof of identity to recipient and receiver should have
+Repudiation: Sending proof of identity to the recipient and the receiver should have
 proof of identity of the sender. (Digital Certificate)
 
 Information Disclosure: Disclosure of sensitive information
@@ -44,7 +58,7 @@ a normal user.
 
 ```
 
-## Dread
+### Dread
 
 ```
 It decides the impact of a threat
