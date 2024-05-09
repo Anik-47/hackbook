@@ -1,11 +1,3 @@
 # Advanced Search
 
-|           Syntax          |                         Function                        |
-| :-----------------------: | :-----------------------------------------------------: |
-|     OSINT filetype:pdf    | Find files of the type `PDF` related to a certain term. |
-|  salary site:example.com  |         Limit search results to a specific site.        |
-| pentest -site:example.com |           Exclude a specific site from results          |
-|  walkthrough intitle:sqli |    Find pages with a specific term in the page title.   |
-|    challenge inurl:cat    |     Find pages with a specific term in the page URL.    |
-|     imagesize:500x400     |              Search for an exact image size             |
-|         @linkedin         |                   Search Social Media                   |
+<table><thead><tr><th width="320" align="center">Syntax</th><th align="center">Function</th></tr></thead><tbody><tr><td align="center">OSINT filetype:pdf</td><td align="center">Find files of the type <code>PDF</code> related to a certain term.</td></tr><tr><td align="center">salary site:example.com</td><td align="center">Limit search results to a specific site.</td></tr><tr><td align="center">pentest -site:example.com</td><td align="center">Exclude a specific site from results</td></tr><tr><td align="center">walkthrough intitle:sqli</td><td align="center">Find pages with a specific term in the page title.</td></tr><tr><td align="center">challenge inurl:cat</td><td align="center">Find pages with a specific term in the page URL.</td></tr><tr><td align="center">imagesize:500x400</td><td align="center">Search for an exact image size</td></tr><tr><td align="center">@linkedin</td><td align="center">Search Social Media</td></tr></tbody></table>
