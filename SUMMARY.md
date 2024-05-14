@@ -21,6 +21,7 @@
   * [Error Based](web/sql-injection/error-based.md)
   * [cheat-sheet](web/sql-injection/cheat-sheet.md)
 * [Oauth](web/oauth/README.md)
+  * [Grant Types](web/oauth/grant-types.md)
   * [Oauth Test Cases](web/oauth/oauth-test-cases.md)
 * [JWT](web/jwt/README.md)
   * [Page 1](web/jwt/page-1.md)
