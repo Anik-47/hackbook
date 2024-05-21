@@ -13,6 +13,8 @@
 ## web
 
 * [XSS](web/xss.md)
+* [CSRF](web/csrf/README.md)
+  * [Advanced CSRF](web/csrf/advanced-csrf.md)
 * [Headers](web/headers.md)
 * [File-Upload](web/file-upload/README.md)
   * [Bypass-File\_Upload](web/file-upload/bypass-file\_upload.md)
