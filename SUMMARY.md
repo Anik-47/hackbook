@@ -16,6 +16,8 @@
 * [CSRF](web/csrf/README.md)
   * [Advanced CSRF](web/csrf/advanced-csrf.md)
 * [Headers](web/headers.md)
+* [SSTI](web/ssti/README.md)
+  * [Exploitation](web/ssti/exploitation.md)
 * [File-Upload](web/file-upload/README.md)
   * [Bypass-File\_Upload](web/file-upload/bypass-file\_upload.md)
 * [SQL Injection](web/sql-injection/README.md)
