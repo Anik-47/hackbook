@@ -39,7 +39,7 @@ To detect Server-Side Template Injection (SSTI), initially, **fuzzing the templa
 * Use Safe Templates
 * Sandboxing
 
-## Expression Language (EL) Injection
+## [Expression Language (EL) Injection](expression-language-injection.md)
 
 EL injection is a specific type of template injection where the vulnerability arises from the improper handling of expression language input. EL is used to evaluate expressions within templates, and if user input is unsafely embedded within these expressions, it can lead to similar security issues as template injection.
 
