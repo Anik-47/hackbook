@@ -20,7 +20,7 @@
   * [Exploitation](web/ssti/exploitation.md)
   * [Expression Language Injection](web/ssti/expression-language-injection.md)
 * [CMS](web/cms/README.md)
-  * [Test Cases](web/cms/test-cases.md)
+  * [Guide](web/cms/guide.md)
 * [File-Upload](web/file-upload/README.md)
   * [Bypass-File\_Upload](web/file-upload/bypass-file\_upload.md)
 * [SQL Injection](web/sql-injection/README.md)
