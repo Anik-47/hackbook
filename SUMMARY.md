@@ -16,6 +16,7 @@
 * [CSRF](web/csrf/README.md)
   * [Advanced CSRF](web/csrf/advanced-csrf.md)
 * [Headers](web/headers.md)
+* [Host Header Injection](web/host-header-injection.md)
 * [SSTI](web/ssti/README.md)
   * [Exploitation](web/ssti/exploitation.md)
   * [Expression Language Injection](web/ssti/expression-language-injection.md)
