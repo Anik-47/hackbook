@@ -4,7 +4,7 @@ description: Content Management System
 
 # CMS
 
-A Content Management System (CMS) is a software platform that enables users to create, manage, and modify digital content without requiring specialized technical knowledge. CMSs are widely used to build and manage websites, blogs, online stores, and other digital content platforms.
+A CMS is a powerful tool that helps build a website without the need to code everything from scratch. The CMS does most of the "heavy lifting" on the infrastructure side to focus more on the design and presentation aspects of the website instead of the backend structure
 
 ## **How CMS Works**
 
