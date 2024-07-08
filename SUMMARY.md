@@ -16,6 +16,7 @@
 * [CSRF](web/csrf/README.md)
   * [Advanced CSRF](web/csrf/advanced-csrf.md)
 * [Headers](web/headers.md)
+* [Cache Poisoning](web/cache-poisoning.md)
 * [Host Header Injection](web/host-header-injection.md)
 * [SSTI](web/ssti/README.md)
   * [Exploitation](web/ssti/exploitation.md)
